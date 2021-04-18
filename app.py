@@ -15,7 +15,7 @@ def index():
 def city():
     if request.method == "POST":
         cityname = request.form["city"]
-        api_key = "d2545936ebf382f3e65dc6d346b6fac2"
+        api_key = "Your API key"
 
         base_url = "http://api.openweathermap.org/data/2.5/weather?"
 
