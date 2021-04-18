@@ -1,11 +1,46 @@
 {% extends "base.html" %}
 {% block title %}City Search{% endblock %}
+{% block style %}
+<style>
+    .form {
+        max-width: 500px;
+        max-height: 500px;
+        margin: auto;
+}
+    input {
+        width: 100%;
+        margin-top: 50px;
+    }
+    input[type=text] {
+        padding: 15px;        
+        background-color: #f1f1f1;
+        border: 0ch;
+        transition: background-color 0.3s linear;
+    }
+    input[type=text]:focus {
+        background-color: aliceblue;        
+    }
+    input[type=submit] {
+        background-color: #4CAF50;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 10px;
+        transition: border-radius 0.3s linear;
+    }
+
+    input[type=submit]:hover {
+        background-color: #45a049;
+        border-radius: 20px;
+    }
+</style>
+{% endblock %}
 
 {% block content %}
-
+<div class = "form">
 <form action="#" method="POST">
-    <p>City Name</p>
-    <p><input type="text" name="city"/></p>
-    <p><input type="submit" value="Submit"/></p>
+    <p><input type="text" placeholder="Name of City" name="city"/></p>
+    <p><input type="submit" value="Submit"/></p>    
 </form>
+</div>
 {% endblock %}
