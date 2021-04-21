@@ -1,5 +1,19 @@
 {% extends "base.html" %}
 {% block title %}Index Page{% endblock %}
+{% block style %}
+<style>
+    .content {
+        max-width: 500px;
+        margin: auto;
+    }
+</style>
+{% endblock %}
 {% block content %}
-<h1>Hello</h1>
+<div class="content">
+    <h1>Weather App</h1>
+    <p>
+        Click on Current Weather, enter a city name and click submit.
+    </p>
+</div>
+
 {% endblock %}

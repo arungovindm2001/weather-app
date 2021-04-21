@@ -10,6 +10,10 @@
     input {
         width: 100%;
         margin-top: 50px;
+        border-radius: 20px;
+    }
+    textarea:focus, input:focus {
+        outline: none;
     }
     input[type=text] {
         padding: 15px;        
@@ -25,12 +29,11 @@
         color: white;
         padding: 12px 20px;
         border: none;
-        border-radius: 10px;
-        transition: border-radius 0.3s linear;
+        transition: background-color 0.3s linear;
     }
 
     input[type=submit]:hover {
-        background-color: #45a049;
+        background-color: #30a39d;
         border-radius: 20px;
     }
 </style>
@@ -39,7 +42,7 @@
 {% block content %}
 <div class = "form">
 <form action="#" method="POST">
-    <p><input type="text" placeholder="Name of City" name="city"/></p>
+    <p><input type="text" placeholder="Name of City" name="city" required/></p>
     <p><input type="submit" value="Submit"/></p>    
 </form>
 </div>
