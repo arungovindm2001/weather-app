@@ -1,8 +1,12 @@
 from flask import Flask, render_template, request
 import os
 import requests
+from datetime import date
 from dotenv import load_dotenv  # for python-dotenv method
 load_dotenv()
+
+
+today = date.today()
 
 app = Flask(__name__)
 app.secret_key = os.environ.get('secret_key')
@@ -17,6 +21,7 @@ def index():
 def city():
     if request.method == "POST":
         cityname = request.form["city"]
+        print(cityname)
 
         api_key = os.environ.get('api_key')
 
@@ -34,7 +39,9 @@ def city():
             current_humidiy = y["humidity"]
             z = x["weather"]
             weather_description = z[0]["description"]
+            d2 = today.strftime("%B %d, %Y")
             return(
+                d2 + "<br>" +
                 " Temperature : " + str(currentTemperature - 273.15) + u"\N{DEGREE SIGN}" + "C" + "<br>" +
                 "Atmospheric pressure : " + str(current_pressure) + " hPa" + "<br>" +
                 "Humidity : " + str(current_humidiy) + "%" + "<br>" +
